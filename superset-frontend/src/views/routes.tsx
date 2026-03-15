@@ -42,6 +42,13 @@ const AnnotationLayerList = lazy(
     ),
 );
 
+const AnnouncementList = lazy(
+  () =>
+    import(
+      /* webpackChunkName: "AnnouncementList" */ 'src/pages/AnnouncementList'
+    ),
+);
+
 const AlertReportList = lazy(
   () =>
     import(
@@ -266,6 +273,10 @@ export const routes: Routes = [
   {
     path: '/annotationlayer/:annotationLayerId/annotation/',
     Component: AnnotationList,
+  },
+  {
+    path: '/announcement/list/',
+    Component: AnnouncementList,
   },
   {
     path: '/sqllab/history/',

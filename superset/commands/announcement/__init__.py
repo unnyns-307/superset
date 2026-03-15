@@ -14,4 +14,14 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-from . import announcement, core, dynamic_plugins, sql_lab, user_attributes  # noqa: F401
+"""Announcement commands package"""
+
+from superset.commands.announcement.create import CreateAnnouncementCommand
+from superset.commands.announcement.delete import DeleteAnnouncementCommand
+from superset.commands.announcement.update import UpdateAnnouncementCommand
+
+__all__ = [
+    "CreateAnnouncementCommand",
+    "UpdateAnnouncementCommand",
+    "DeleteAnnouncementCommand",
+]

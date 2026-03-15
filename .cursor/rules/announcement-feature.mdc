@@ -1,0 +1,25 @@
+---
+description: Announcement Manager feature rules for Superset
+globs: ["**/announcements/**/*.py", "**/announcements/**/*.tsx", "**/announcements/**/*.ts"]
+alwaysApply: false
+---
+
+# Announcement Manager Feature
+
+## File locations
+- Backend model/API: `superset/announcements/`
+- Frontend components: `superset-frontend/src/features/announcements/`
+
+## Backend rules
+- Extend `BaseSupersetModelRestApi` for the REST API
+- Use Marshmallow schemas for validation
+- Add `can_read` permission to Public role (banner shows for all users)
+- Add `can_write/delete` to Admin role only
+- Follow model pattern from `superset/charts/api.py`
+
+## Frontend rules  
+- Use `useTheme()` from `@superset-ui/core` for all colors — no hardcoded hex values
+- Fetch announcements from `/api/v1/announcement/?status=active`
+- Store dismissed banner IDs in localStorage under key `superset_dismissed_announcements`
+- The AnnouncementBanner component must render on every route — wire it into the app shell
+- Severity order for banner priority: critical → warning → info → success

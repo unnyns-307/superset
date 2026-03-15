@@ -29,6 +29,7 @@ import { Layout, Loading } from '@superset-ui/core/components';
 import { setupAGGridModules } from '@superset-ui/core/components/ThemedAgGridReact';
 import { ErrorBoundary } from 'src/components';
 import Menu from 'src/features/home/Menu';
+import AnnouncementBanner from 'src/components/AnnouncementBanner';
 import getBootstrapData, { applicationRoot } from 'src/utils/getBootstrapData';
 import ToastContainer from 'src/components/MessageToasts/ToastContainer';
 import setupApp from 'src/setup/setupApp';
@@ -91,6 +92,7 @@ const App = () => (
                       flex-direction: column;
                     `}
                   >
+                    <AnnouncementBanner />
                     <ErrorBoundary
                       css={css`
                         margin: 16px;
